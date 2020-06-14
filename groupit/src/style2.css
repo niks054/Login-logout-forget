@@ -1,0 +1,159 @@
+.home-body{
+    background-color: white;
+    height: 800px;
+    width: 100%;
+    padding-top:5em;
+    
+}
+nav{
+    overflow: hidden;
+    background: #222;
+    padding: 0px 20px;
+    margin-top: 0px;
+    width:100%;
+    position:fixed
+}
+ul {
+    list-style-type: none;
+   }
+
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: gainsboro;
+}
+.menu li{
+    font-size: 16px;
+    padding: 15px 5px;
+}
+.toggle{
+    display: flex;
+}
+.logo a{
+    font-size: 24px;
+}
+.menu li a{
+    display: block;
+}
+.button.secondary{
+    border-bottom:1px #444 solid;
+}
+/* Mobile Menu*/
+
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.logo{
+    order:0;
+}
+.toggle{
+    cursor: pointer;
+    order: 1;
+}
+.item.button{
+    order:2;
+}
+.item{
+    width: 100%;
+    text-align: center;
+    order:3;
+    display: none;
+}
+.item.active{
+    display: block;
+}
+.bars{
+    background: #999;
+    display: inline-block;
+    height: 3px;
+    position: relative;
+    width: 20px;
+    align-items: center;
+
+}
+.bars::before{
+    top:7px;
+    background: #999;
+    content: "";
+    display: inline-block;
+    height: 3px;
+    position: absolute;
+    width: 20px;
+}
+.bars::after{
+    top:-7px;
+    background: #999;
+    content: "";
+    display: inline-block;
+    height: 3px;
+    position: absolute;
+    width: 20px;
+}
+
+
+/*Tablet Menu*/
+@media all and (min-width:468px){
+    .menu{
+        justify-content: center;
+    }
+    .logo{
+        flex:1;
+    }
+    .item.button{
+        width:auto;
+        order: 1;
+        display: block;
+    }
+    .toggle{
+        order: 2;
+    }
+    .button.secondary{
+        border: none;
+    }
+    .button a{
+        padding: 7px 15px;
+        background: teal;
+        border: 1px solid teal;
+        border-radius: 50em;
+    }
+    .button.secondary a{
+         background: transparent;
+    }
+    .button a:hover{
+        transition: all .25s;
+    }
+    .button:not(.secondary) a:hover{
+        background: rgb(1, 102, 102);
+    }
+}
+@media all and (min-width:768px){
+    .item{
+        display: block;
+        width:auto;
+        }
+        .toggle{
+            display: none;
+        }
+        .logo{
+            order: 0;
+        }
+        .item{
+            order:1;
+        }
+        .button{
+            order: 2;
+        }
+        .menu li{
+            padding: 15px 10px;
+        }
+        .menu li.button{
+            padding-right: 0;
+        }
+}
